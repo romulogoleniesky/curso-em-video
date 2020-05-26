@@ -1,18 +1,28 @@
-#DESAFIO - 096(função):
-#Realizar um programa que calcule a área de um terreno em
-#metros quadrados.
+#DESAFIO - 097(função):
+#Faça um programa que tenha uma função escreva(), que receba um texto
+# e mostre ele com as linhas adaptadas ao seu tamanho.
 
 
 
 #Definição da função:
-def área(L, C):
-    a = L * C
-    print(f'O terreno com dimensões de {L} X {C}, tem área de {a} m²!')
+def escreva(msg):
+    tam = len(msg)+2
+    print('~'*tam)
+    print(f' {msg}')
+    print('~'*tam)
+
+
+def escreva1(msg1):
+    tam1 = len(msg1)+2
+    print('~'*tam1)
+    print(f' {msg1}')
+    print('~'*tam1)
+
 
 
 #Programa principal:
-print("Controle de Terrenos")
-lar = float(input("Largura(m):"))
-comp = float(input("Comprimento(m):"))
-
-área(lar, comp)
+print("Você escreverá duas mensagens de tamanhos diferentes e veja como as linhas se adaptam às mensagens!")
+texto = str(input("Escreva aqui a primeira mensagem: "))
+texto1 = str(input("Agora, escreva aqui a segunda mensagem: "))
+escreva(texto)
+escreva1(texto1)
