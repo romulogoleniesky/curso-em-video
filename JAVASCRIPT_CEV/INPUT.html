@@ -1,0 +1,33 @@
+<DOCTYPE! html>
+    <head lang="pt-br">
+        <meta charset="utf-8">
+        <title>Laços</title>
+    </head>
+    <body>
+        <h1>Somando com INPUT:</h1>
+        <ol>
+            <li>INPUT</li>
+            <li>VARIÁVEL</li>
+        </ol>
+        <H2>SOMA</H2>
+        <p>Número A</p><input id="nun1"><br>
+        <p>Número B</p><input id="nun2"><br>
+
+        <button onclick="somar()">Somar</button>
+        <p>
+    
+        </p>
+        <script>
+            function somar(){
+                var numeroA = parseInt(document.getElementById('nun1').value);
+                var numeroB = parseInt(document.getElementById("nun2").value);
+                var resultsoma = parseInt(numeroA + numeroB)
+                console.log(resultsoma)
+                document.write(resultsoma);
+            }
+
+
+        </script>
+
+    </body>
+</DOCTYPE>
