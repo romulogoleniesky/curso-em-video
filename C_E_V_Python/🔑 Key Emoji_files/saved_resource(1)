@@ -1,0 +1,32 @@
+
+var ftGUID_4200431="4555DA4D412B4D";
+var ftConfID_4200431="0";
+var ftParams_4200431="ftx=&fty=&ftadz=&ftscw=&ft_custom=&ftOBA=1&ft_ifb=1&ft_domain=emojipedia.org&ft_agentEnv=0&ft_referrer=https%3A%2F%2Femojipedia.org%2Fkey%2F&ft_section=__30350643551679480712847945257557880055&cachebuster=617382.0800275825";
+var ftKeyword_4200431="";
+var ftCustom_4200431="";
+var ftSection_4200431="__30350643551679480712847945257557880055";
+var ftSegment_4200431="";
+var ftSegmentList_4200431=[];
+var ftRuleMatch_4200431="0";
+var ftTimestamp_4200431="1592699445";
+var ftGeoC2_4200431="br";
+var ftGeoState_4200431="pa";
+var ftGeoCity_4200431="benevides";
+var ftISP_4200431="as sistemas ltda";
+var ftSpeed_4200431="broadband";
+var ftDMA_4200431="76090";
+var ftLong_4200431="-48.27";
+var ftLat_4200431="-1.34";
+var ftPostal_4200431="68795-000";
+var ftTimeZone_4200431="-300";
+var ftMobileCarrier_4200431="";
+var ftImp4200431 = {};
+ftImp4200431.privacy = "x";
+ftImp4200431.guidAge = "0";
+ftImp4200431.impID = "C17BDABB-9787-80D6-0372-A554642F301E";
+ftImp4200431.duid = "FT:4555DA4D412B4D";
+
+ftImp4200431.ft_tpplid = "";
+ftImp4200431.ft_c = {};
+
+document.write('<scr'+'ipt src="https://cdn.flashtalking.com/xre/420/4200431/2575464/js/j-4200431-2575464.js" id="ftscript_m4200431" name="ftscript_m4200431"></scr'+'ipt>');

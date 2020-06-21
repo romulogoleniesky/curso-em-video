@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://s0.2mdn.net/3797665/1565190011521/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <title></title>
+    <style> body { margin: 0; } </style><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="ad.size" content="height=250,width=300"><script>var clickTag = "https://vimeo.com/";</script>
+  <script type="text/javascript">
+    
+  (function() {
+    var MAX_URL_PARAM_LENGTH = 34;
+    var CLICK_X_URL_KEY = 'nx';
+    var CLICK_Y_URL_KEY = 'ny';
+    var CREATIVE_DIMENSIONS_KEY = 'dim';
+    var AD_URL_PARAM = '&adurl=';
+
+    var relegateNavigation = '';
+    var urlParamMap = {};
+
+    urlParamMap[CLICK_X_URL_KEY] = null;
+    urlParamMap[CLICK_Y_URL_KEY] = null;
+    urlParamMap[CREATIVE_DIMENSIONS_KEY] = null;
+
+    var handleClickTagMessage = function(e) {
+      try {
+        var eventData = JSON.parse(e.data);
+      } catch (err) {
+        return;
+      }
+      if (eventData.isInitClickTag) {
+        if (eventData.clickTags) {
+          for (var i = 0; i < eventData.clickTags.length; i++) {
+            var clkTag = eventData.clickTags[i];
+            window[clkTag.name] = clkTag.url;
+          }
+        } else if (eventData.clickTag) {
+          window.clickTag = eventData.clickTag;
+        }
+        relegateNavigation = eventData.relegateNavigation;
+      }
+    };
+
+    var storeClickCoordinates = function(e) {
+      urlParamMap[CLICK_X_URL_KEY] = Math.round(e.clientX);
+      urlParamMap[CLICK_Y_URL_KEY] = Math.round(e.clientY);
+    };
+
+    var getCreativeDimensions = function() {
+      return window.innerWidth + 'x' + window.innerHeight;
+    }
+
+    var getExitClickParams = function(e) {
+      urlParamMap[CREATIVE_DIMENSIONS_KEY] = getCreativeDimensions();
+
+      var exitParams = '';
+      for (var key in urlParamMap) {
+        exitParams += '&' + key + '=';
+        if (urlParamMap[key] !== null) {
+          exitParams += urlParamMap[key];
+        }
+      }
+      return exitParams;
+    }
+
+    var appendExitClickParams = function(url) {
+      var adUrlIndex = url.toLowerCase().indexOf(AD_URL_PARAM);
+      var paramsToBeAdded = getExitClickParams();
+      if (adUrlIndex > -1 && paramsToBeAdded.length <= MAX_URL_PARAM_LENGTH) {
+        url = url.substr(0, adUrlIndex) + paramsToBeAdded +
+          url.substr(adUrlIndex);
+      };
+      return url;
+    };
+
+    if (open.call) {
+      window.open = function(open) {
+        return function(url, name, features) {
+          url = appendExitClickParams(url);
+          if (relegateNavigation === 'parent') {
+            var message = {'clickTag': url, 'isPostClickTag': true};
+            parent.postMessage(JSON.stringify(message), '*');
+          } else {
+            var args = [url, name];
+            if (features) {
+              args.push(features);
+            }
+            open.apply(window, args);
+          }
+        };
+      }(window.open);
+    }
+
+    if (window.addEventListener) {
+      window.addEventListener(
+          'message', handleClickTagMessage, false);
+      window.addEventListener('mousedown', storeClickCoordinates, true);
+    } else {
+      window.attachEvent('onmessage', handleClickTagMessage);
+    }
+  })();
+    
+  </script></head>
+  <body>
+    <script src="./tweenmax_1.20.0_d360d9a082ccc13b1a1a9b153f86b378_min.js.download" type="text/javascript"></script>
+    <script src="./blueprint.js(1).download" type="text/javascript"></script>
+    <script src="./banner.js(1).download" type="text/javascript"></script>
+  
+
+<div id="banner" style="cursor: pointer; overflow: hidden; background-color: rgb(229, 159, 184); height: 250px; width: 300px; position: absolute; transform: translate3d(0px, 0px, 0px);"><div id="stage" style="height: 250px; width: 300px; line-height: 0; top: 0px; left: 0px; position: absolute; transform: translate3d(0px, 0px, 0px);"></div><div id="bg" style="height: 250px; width: 300px; line-height: 0; top: 0px; left: 0px; position: absolute; transform: translate3d(0px, 0px, 0px);"></div><div id="logo_vimeo" style="background-size: contain; background-repeat: no-repeat; height: 23px; width: 81px; background-image: url(&quot;https://s0.2mdn.net/3797665/1565190011521/logo_vimeo.png&quot;); line-height: 0; top: 200px; left: 20px; position: absolute; transform: translate3d(0px, 0px, 0px);"></div><div id="txt_1" style="background-size: contain; background-repeat: no-repeat; height: 195px; width: 295px; background-image: url(&quot;https://s0.2mdn.net/3797665/1565190011521/txt_1.png&quot;); line-height: 34.72; top: -7px; left: -11px; position: absolute; transform: translate3d(0px, 0px, 0px); opacity: 0;"></div><div id="txt_2" style="background-size: contain; background-repeat: no-repeat; height: 141px; width: 316px; background-image: url(&quot;https://s0.2mdn.net/3797665/1565190011521/txt_2.png&quot;); line-height: 35.15; top: 23px; left: -16px; position: absolute; transform: translate3d(0px, 0px, 0px); opacity: 1;"></div><div id="txt_3" style="background-size: contain; background-repeat: no-repeat; height: 57px; width: 197px; background-image: url(&quot;https://s0.2mdn.net/3797665/1565190011521/txt_3.png&quot;); line-height: 20.8; top: 125px; left: 5px; position: absolute; transform: translate3d(0px, 0px, 0px); opacity: 1;"></div><div id="container_endframe" style="height: 167px; width: 260px; line-height: 0; top: 28px; left: 20px; position: absolute; transform: translate3d(0px, 0px, 0px);"></div><div id="cta" style="line-height: 15.6; top: 196px; left: 176px; position: absolute; transform: translate3d(0px, 0px, 0px); border-radius: 4px; background-color: rgb(0, 0, 0); height: 35px; width: 103px;"><div id="cta_1" style="background-size: contain; background-repeat: no-repeat; height: 35px; width: 103px; background-image: url(&quot;https://s0.2mdn.net/3797665/1565190011521/cta_1.png&quot;); position: absolute; transform: translate3d(0px, 0px, 0px);"></div></div><div id="ctaHover" style="line-height: 15.6; top: -2px; left: -2px; position: absolute; transform: translate3d(0px, 0px, 0px); opacity: 0;"><div id="ctaHover_1" style="background-size: contain; background-repeat: no-repeat; height: 35px; width: 103px; background-image: url(&quot;https://s0.2mdn.net/3797665/1565190011521/ctaHover_1.png&quot;); position: absolute; transform: translate3d(0px, 0px, 0px);"></div></div><div id="top" style="height: 10px; width: 300px; line-height: 0; top: -10px; left: 0px; position: absolute; transform: translate3d(0px, 0px, 0px);"></div><div id="bottom" style="height: 10px; width: 300px; line-height: 0; top: 250px; left: 0px; position: absolute; transform: translate3d(0px, 0px, 0px);"></div><div id="left" style="height: 250px; width: 10px; line-height: 0; top: 0px; left: -10px; position: absolute; transform: translate3d(0px, 0px, 0px);"></div><div id="right" style="height: 250px; width: 10px; line-height: 0; top: 0px; left: 300px; position: absolute; transform: translate3d(0px, 0px, 0px);"></div><canvas width="10" height="250" style="right: 0px; height: 250px; width: 10px; position: absolute; transform: translate3d(25px, 0px, 0px);"></canvas><div style="z-index: 1; box-sizing: border-box; border: 1px solid rgb(0, 0, 0); height: 100%; width: 100%; position: absolute; transform: translate3d(0px, 0px, 0px);"></div><div style="overflow: visible; height: 25px; width: 25px; top: 0px; left: 0px; position: absolute; transform: translate3d(320px, 14.624px, 0px);"><div id="slider" style="height: 25px; width: 25px; line-height: 0; top: 0px; left: 0px; position: absolute; transform: translate3d(-12.5px, -12.5px, 0px); border-radius: 50%; background-color: rgb(255, 255, 255);"></div></div><div style="overflow: visible; height: 62px; width: 51px; top: 0px; left: 0px; position: absolute; transform: translate3d(221px, -71px, 0px);"><div id="hand" style="background-size: contain; background-repeat: no-repeat; height: 62px; width: 51px; background-image: url(&quot;https://s0.2mdn.net/3797665/1565190011521/hand.png&quot;); line-height: 0; top: 0px; left: 0px; position: absolute; transform: translate3d(-41.82px, -4.96px, 0px);"></div></div><div style="overflow: visible; height: 62px; width: 52px; top: 0px; left: 0px; position: absolute; transform: translate3d(267px, 43px, 0px);"><div id="hand_pos1" style="height: 62px; width: 52px; line-height: 0; top: 0px; left: 0px; position: absolute; transform: translate3d(-42px, -5px, 0px);"></div></div><div style="overflow: visible; height: 62px; width: 52px; top: 0px; left: 0px; position: absolute; transform: translate3d(221px, -71px, 0px);"><div id="hand_pos2" style="height: 62px; width: 52px; line-height: 0; top: 0px; left: 0px; position: absolute; transform: translate3d(-42px, -5px, 0px);"></div></div></div></body></html>
