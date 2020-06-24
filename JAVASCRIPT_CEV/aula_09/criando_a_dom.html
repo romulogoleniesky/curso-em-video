@@ -17,13 +17,23 @@
         </style>
     </head>
     <body>
-        <header>D.O.M</header>
-        <h1>D.O.M : Document Object Model - Documento de Modelo de Objeto</h1>
+        <header name="nome">D.O.M</header>
+        <h1 id="pegaID">D.O.M : Document Object Model - Documento de Modelo de Objeto</h1>
         <p>O DOM é uma extrutura de interface para representação e interação com os objetos e documentos HTML e XML</p>
 
-        <footer>Rômulo Goleniesky - 💻</footer>
+        <footer class="Rodapé">Rômulo Goleniesky - 💻</footer>
         <script>
-
+            /*FORMAS DE ACESSAR OBJETOS*/
+            var marca_TAG = document.getElementsByTagName("p")[0];
+            var ID = document.getElementById("pegaID");
+            var NAME = document.getElementsByName("nome");
+            var Classe = document.getElementsByClassName("Rodapé")
+            var SELETOR = document.querySelector("h1#pegaID")
+            window.document.write(marca_TAG);
+            window.document.write(ID);
+            window.document.write(NAME);
+            window.document.write(Classe);
+            window.document.write(SELETOR);
         </script>
     </body>
 </html>
